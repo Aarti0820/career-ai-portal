@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Login</title>
+
+<style>
+
+body {
+  margin:0;
+  font-family:'Segoe UI', 'Noto Color Emoji', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+
+/* GLASS CARD */
+.box {
+  width:360px;
+  padding:40px;
+  border-radius:15px;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.05);
+  box-shadow:0 10px 40px rgba(0,0,0,0.7);
+  text-align:center;
+}
+
+/* TITLE */
+h2 {
+  margin-bottom:20px;
+  font-weight:600;
+}
+
+/* INPUT */
+.input-group {
+  margin:15px 0;
+}
+
+input {
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+  background:#1e293b;
+  color:white;
+}
+
+input::placeholder {
+  color:#94a3b8;
+}
+
+/* BUTTON */
+button {
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  border-radius:8px;
+  background: linear-gradient(135deg,#6366f1,#0ea5e9);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  transform:scale(1.05);
+}
+
+/* NOTE */
+.note {
+  margin-top:15px;
+  font-size:13px;
+  color:#94a3b8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h2>Admin Login 🔐</h2>
+
+  <div class="input-group">
+    <input id="email" placeholder="Admin Email">
+  </div>
+
+  <div class="input-group">
+    <input id="password" type="password" placeholder="Password">
+  </div>
+
+  <button onclick="login()">Login</button>
+
+  <p class="note">Only authorized users allowed</p>
+
+</div>
+
+<script>
+function login(){
+
+  let e = email.value;
+  let p = password.value;
+
+  if(e==="admin@gmail.com" && p==="123"){
+    localStorage.setItem("admin","true");
+    window.location="admin.html";
+  } else {
+    alert("Invalid Credentials ❌");
+  }
+
+}
+</script>
+
+</body>
+</html>
